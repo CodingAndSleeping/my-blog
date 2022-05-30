@@ -71,7 +71,7 @@ export default {
     this.blogDetail = blogDetailResult.blogDetail;
     // 调用用户是否点赞接口，判断当前用户是否点赞该篇文章
     const isLikeResult = await isLike({
-      username: this.blogDetail.username,
+      username: this.$store.state.user.username || localStorage.getItem("username"),
       blogId: this.blogDetail.id,
     });
     // 将用户点赞状态赋值给isLike和CurrentLike
@@ -84,7 +84,7 @@ export default {
       // 若不相同，则发送请求，修改点赞状态，更新点赞数量
       updateLikes({
         isLike: this.currentLike,
-        username: this.blogDetail.username,
+        username: this.$store.state.user.username || localStorage.getItem("username"),
         blogId: this.blogDetail.id,
       });
     }

@@ -2,7 +2,6 @@ import axios from 'axios';
 import config from '@/api/config';
 //获取根地址
 const baseUrl = process.env.NODE_ENV === 'development' ? config.baseUrl.dev : config.baseUrl.pro
-
 class HttpRequest {
 
     constructor(baseUrl) {

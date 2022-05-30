@@ -71,6 +71,9 @@ export default {
             name: "home",
           });
         }
+        if(this.$route.name === "userCenter"){
+          this.$router.go(0)
+        }
       }
     },
   },

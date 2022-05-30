@@ -167,7 +167,8 @@ export default {
       this.$refs[formName].validate(async (valid) => {
         if (valid) {
           // 设置默认头像， 地址是服务器地址头像静态资源路径
-          this.form.avater = "http://localhost:3000/static/avater/default.jpg";
+          this.form.avater = "http://47.113.230.146:3000/static/avater/default.jpg";
+          // this.form.avater = "http://localhost:3000/static/avater/default.jpg";
           const result = await register(this.form);
           // 设置定时器，注册成功三秒后跳转登录页
           setTimeout(() => {

@@ -1,9 +1,9 @@
 import axios from '@/api/index';
-
+const url = process.env.NODE_ENV === 'development' ? "/myblog" : ""
 // 登录接口
 export const login = (data) => {
     return axios.request({
-        url: "/myblog/login",
+        url: url+"/login",
         method: "post",
         data
     })
@@ -12,7 +12,7 @@ export const login = (data) => {
 // 校验用户名是否重复接口
 export const validate = (username) => {
     return axios.request({
-        url: "/myblog/validateName",
+        url: url+"/validateName",
         method: "post",
         data: {
             username
@@ -23,7 +23,7 @@ export const validate = (username) => {
 // 注册接口
 export const register = (data) => {
     return axios.request({
-        url: "/myblog/register",
+        url: url+"/register",
         method: "post",
         data
     })
@@ -32,7 +32,7 @@ export const register = (data) => {
 // 获取文章标签列表接口
 export const getLabels = () => {
     return axios.request({
-        url: "/myblog/getLabels",
+        url: url+"/getLabels",
         method: "get"
     })
 }
@@ -40,7 +40,7 @@ export const getLabels = () => {
 // 添加博客接口
 export const addBlog = (data) => {
     return axios.request({
-        url: "/myblog/addBlog",
+        url: url+"/addBlog",
         method: "post",
         data
     })
@@ -49,7 +49,7 @@ export const addBlog = (data) => {
 // 获得博客列表接口
 export const getBlogs = (params) => {
     return axios.request({
-        url: "/myblog/getBlogs",
+        url: url+"/getBlogs",
         method: "get",
         params
     })
@@ -58,7 +58,7 @@ export const getBlogs = (params) => {
 // 获得博客详情接口
 export const getBlogDetail = (params) => {
     return axios.request({
-        url: "/myblog/getBlogDetail",
+        url: url+"/getBlogDetail",
         method: "get",
         params
     })
@@ -67,7 +67,7 @@ export const getBlogDetail = (params) => {
 // 更新点赞接口
 export const updateLikes = (data) => {
     return axios.request({
-        url: "/myblog/updateLikes",
+        url: url+"/updateLikes",
         method: "put",
         data
     })
@@ -76,7 +76,7 @@ export const updateLikes = (data) => {
 // 更新阅读量接口
 export const updateViews = (data) => {
     return axios.request({
-        url: "/myblog/updateViews",
+        url: url+"/updateViews",
         method: "put",
         data
     })
@@ -85,7 +85,7 @@ export const updateViews = (data) => {
 // 查看用户是否点赞该篇文章接口
 export const isLike = (params) => {
     return axios.request({
-        url: "/myblog/isLike",
+        url: url+"/isLike",
         method: "get",
         params
     })
@@ -94,7 +94,7 @@ export const isLike = (params) => {
 // 获得用户所写的博客接口
 export const getUserBlogs = (params) => {
     return axios.request({
-        url: "/myblog/getUserBlogs",
+        url: url+"/getUserBlogs",
         method: "get",
         params
     })
@@ -103,7 +103,7 @@ export const getUserBlogs = (params) => {
 // 获得用户头像接口
 export const getAvater = (params) => {
     return axios.request({
-        url: "/myblog/getAvater",
+        url: url+"/getAvater",
         method: "get",
         params
     })
@@ -112,7 +112,7 @@ export const getAvater = (params) => {
 // 删除博客接口
 export const deleteBlog = (params) => {
     return axios.request({
-        url: "/myblog/deleteBlog",
+        url: url+"/deleteBlog",
         method: "delete",
         params
     })
@@ -121,7 +121,7 @@ export const deleteBlog = (params) => {
 // 修改博客接口
 export const updateBlog = (data) => {
     return axios.request({
-        url: "/myblog/updateBlog",
+        url: url+"/updateBlog",
         method: "put",
         data
     })

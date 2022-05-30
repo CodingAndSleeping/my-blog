@@ -35,9 +35,6 @@ const routes = [{
                 path: "/userCenter/:username",
                 name: "userCenter",
                 component: () => import("@/views/UserCenter"),
-                meta: {
-                    requiresAuth: true,
-                }
             },
             {
                 path: "/updateBlog/:id",

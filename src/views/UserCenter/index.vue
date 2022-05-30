@@ -66,7 +66,7 @@
           上传头像：
           <el-upload
             class="avatar-uploader"
-            action="http://localhost:8080/myblog/upLoadAvater"
+            :action="url"
             list-type="picture-card"
             name="img"
             :headers="headers"
@@ -111,6 +111,7 @@ export default {
       avater: "",
       // 修改头像对话框是否显示
       dialogFormVisible: false,
+      url:process.env.NODE_ENV === 'development' ? "http://localhost:8080/myblog/upLoadAvater" : "http://localhost:3000/upLoadAvater",
       // 请求头
       headers: {
         token: this.$store.state.user.token || localStorage.getItem("token"),
