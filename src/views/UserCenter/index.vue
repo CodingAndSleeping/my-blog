@@ -56,7 +56,7 @@
       :total="total"
       @current-change="handleCurrentChange"
       :current-page.sync="currentPage"
-      :page-size="5"
+      :page-size="4"
     >
     </el-pagination>
 
@@ -204,9 +204,10 @@ export default {
       });
     },
   },
-  async mounted() {
+  async created() {
     const blogResult = await getUserBlogs({ username: this.username });
     this.blogs = blogResult.blogs;
+    console.log(blogResult)
     this.total = blogResult.total;
     this.viewsTotal = blogResult.viewsTotal;
     this.likesTotal = blogResult.likesTotal;
